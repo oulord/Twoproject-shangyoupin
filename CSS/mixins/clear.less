@@ -1,0 +1,8 @@
+.clearfix(){
+    &::after{
+        clear: both; //清除浮动：用于清除之前的左右浮动
+        display: block; //元素生成一个块元素，在正常流中生成元素前后的换行符
+        content: ''; //用于在元素的 ::before 和 ::after 伪元素插入内容，使用 content 属性插入的内容都是匿名的可替换元素
+    }
+
+}
