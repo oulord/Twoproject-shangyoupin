@@ -130,4 +130,39 @@ window.onload = function(){
         }
     }
 
+    // 动态渲染放大镜缩略图的数据
+    thunbnailData()
+    function thunbnailData(){
+        /**
+         * 思路：
+         * 1、先获取piclist元素下的ul
+         * 2、再获取data.js下的goodData -> imagessrc
+         * 3、遍历数组，根据数据的长度来创建li元素
+         * 4、让ul遍历追加li元素
+         */
+
+        // 1、获取piclist下的ul
+        var ul = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom #piclist ul')
+        // console.log(ul);
+
+        // 2、获取imagessrc数据
+        var imagessrc = goodData.imagessrc
+        // console.log(imagessrc);
+
+        // 3、遍历数据
+        for(var i = 0;i<imagessrc.length;i++){
+            // 4、创建li元素
+            var newLi = document.createElement('li')
+
+            // 5、创建img元素
+            var newImg = document.createElement('img')
+            newImg.src = imagessrc[i].s
+
+            // 6、让li来追加img元素
+            newLi.appendChild(newImg)
+
+            // 7、让ul追加li元素
+            ul.appendChild(newLi)
+        }
+    }
 }
