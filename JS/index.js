@@ -207,4 +207,53 @@ window.onload = function(){
             }
         }
     }
+
+    // 点击缩略图左右箭头进行移动的效果
+    thumbnailLeftRightClick()
+    function thumbnailLeftRightClick(){
+        /**
+         * 思路：
+         * 1、先获取左右两段的箭头按钮
+         * 2、再获取可视的div以及ul元素和所有的li元素
+         * 3、计算（发生起点、步长、总体运动的距离值）
+         * 4、然后再发生点击事件
+         */
+
+        // 1、先获取左右两端的箭头按钮
+        var prev = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom a.prev')
+        // console.log(prev);
+        var next = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom a.next')
+        // console.log(next);
+
+        // 2、再获取可视的div以及ul元素和所有的li元素
+        var piclist = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom #piclist')
+        var ul = document.querySelector('#wrapper #content .contentMain #center #left #leftBottom #piclist ul')
+        var liNodes = document.querySelectorAll('#wrapper #content .contentMain #center #left #leftBottom #piclist ul li')
+        // console.log(piclist,ul,liNodes); 
+
+        // 3、计算（发生起点、步长、总体运动的距离值）
+        // 起点
+        var start = 0
+        // 运动距离
+        var step = (liNodes[0].offsetWidth + 20) * 2
+        // 总体的距离 = ul的宽度 - div框的宽度 = （图片的总数 - div中显示的数量） * （li的宽度）
+        var endPostion = (liNodes.length -5) * (liNodes[0].offsetWidth + 20);
+
+        // 4、然后再发生点击事件
+        prev.onclick = function(){
+            start -= step
+            if (start < 0) {
+                start = 0
+            }
+            ul.style.left = -start + "px"
+        }
+
+        next.onclick = function(){
+            start += step
+            if (start >= endPostion) {
+                start = endPostion
+            }
+            ul.style.left = -start + "px"
+        }
+    }
 }

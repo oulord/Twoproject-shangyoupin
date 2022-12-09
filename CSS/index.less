@@ -221,7 +221,7 @@
                             text-align: center;
                             line-height: 54px;
                             float: left;
-                            &:first-child{
+                            &:first-child{  //使用的是less中的伪类选择器
                                 margin-right: 4px;
                             }
                          }
@@ -231,8 +231,11 @@
                             height: 56px;
                             float: left;
                             overflow: hidden;
+                            position: relative;  //不加轮播效果动不了,但是stycik也能实现滚动
                             ul{
                                 white-space: nowrap;
+                                position: absolute;  //不加轮播效果动不了
+                                // left: 0px;
                                 // 消灭小缝隙
                                 font-size: 0px;
                                 li{

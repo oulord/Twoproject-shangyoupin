@@ -199,9 +199,11 @@
   height: 56px;
   float: left;
   overflow: hidden;
+  position: relative;
 }
 #wrapper #content .contentMain #center #left #leftBottom #piclist ul {
   white-space: nowrap;
+  position: absolute;
   font-size: 0px;
 }
 #wrapper #content .contentMain #center #left #leftBottom #piclist ul li {
