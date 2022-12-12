@@ -257,5 +257,60 @@ window.onload = function(){
         }
     }
 
-    
+    // 商品详情数据的动态渲染
+    rightTopData()
+    function rightTopData(){
+        /**
+         * 思路：
+         * 1、查找rightTop元素
+         * 2、查找data.js -> goodData -> goodDetail 中数据
+         * 3、重新建立一个字符串变量，将原来的布局结构贴进来，将所对应的数据放在对应的的
+         * 位置上，重新渲染rightTop元素
+         */
+
+        // 1、查找rightTop元素
+        var rightTop = document.querySelector('#wrapper #content .contentMain #center .right .rightTop')
+        // console.log(rightTop);
+
+        // 2、查找数据
+        var goodDetail = goodData.goodsDetail
+        // console.log(goodDetail);
+
+        // 3、创建一个字符串变量
+        // 模板字符串替换数据：${变量}
+        var s = `<h3>${goodDetail.title}</h3>
+                    <p>${goodDetail.recommend}</p>
+                <div class="priceWrap">
+                    <div class="priceTop">
+                        <span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</span>
+                        <div class="price">
+                            <span>￥</span>
+                            <p>${goodDetail.price}</p>
+                            <i>降价通知</i>
+                        </div>
+                        <p>
+                            <span>累计评价</span>
+                            <span>${goodDetail.evaluateNum}</span>
+                        </p>
+                    </div>
+                    <div class="priceBottom">
+                        <span>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
+                        <p>
+                            <span>${goodDetail.promoteSales.type}</span>
+                            <span>${goodDetail.promoteSales.content}</span>
+                        </p>
+                    </div>
+                </div>
+                    <div class="support">
+                        <span>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</span>
+                        <span>${goodDetail.support}</span>
+                    </div>
+                    <div class="address">
+                        <span>配&nbsp;送&nbsp;至</span>
+                        <p>${goodDetail.address}</p>
+                    </div>`
+
+        // 4、重新渲染rightTop元素
+        rightTop.innerHTML = s
+    }
 }
