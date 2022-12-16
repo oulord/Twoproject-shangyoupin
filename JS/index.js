@@ -313,4 +313,79 @@ window.onload = function(){
         // 4、重新渲染rightTop元素
         rightTop.innerHTML = s
     }
+
+    // 商品参数的数据渲染
+    rightBottomData()
+    function rightBottomData(){
+        /**
+         * 思路：
+         * 1、找rightBottom的元素对象
+         * 2、查找data.js -> goodData.goodsDetail.crumbData 数据
+         * 3、由于数组是一个数组，需要遍历，有一个元素则需要有一个动态的dl元素对象（dt、dd）
+         */
+
+        // 1、查找元素对象
+        var chooseWrap = document.querySelector('#wrapper #content .contentMain #center .rightBottom .chooseWrap')
+        // console.log(chooseWrap);
+
+        // 2、查找数据
+        var crumbData = goodData.goodsDetail.crumbData
+        // console.log(crumbData);
+
+        // 3、循环数据
+        for(var i = 0;i < crumbData.length;i++){
+
+            // 4、创建dl元素对象
+            var dlNode = document.createElement('dl')
+
+            // 5、创建dt元素对象
+            var dtNode = document.createElement('dt')
+            dtNode.innerText = crumbData[i].title
+
+            // 6、dl追加dt
+            dlNode.appendChild(dtNode)
+
+            // 7、遍历crumbData -> data 元素
+            for(var j=0;j < crumbData[i].data.length;j++){
+
+                // 创建dd元素
+                var ddNode = document.createElement('dd')
+                ddNode.innerText = crumbData[i].data[j].type
+
+                // 让dl来追加dd
+                dlNode.appendChild(ddNode)
+            }
+
+            // 8、让chooseWrap追加dl
+            chooseWrap.appendChild(dlNode)
+        }
+    }
+
+    // 点击商品参数之后的颜色排他效果
+    clickddBind()
+    function clickddBind(){
+        /**
+         * 思路：
+         * 1、获取所有的dl元素，取其中一个dl元素下的所有dd先做测试
+         * 2、循环所有的dd元素并且添加点击事件
+         * 3、【排他思维】确定实际发生事件的目标对象设置文字颜色为红色，然后给其他所有元素颜色都重置为基础颜色（#666）
+         */
+
+        // 1、找第一个dl下的所有的dd元素
+        var dlNode = document.querySelectorAll('#wrapper #content .contentMain #center .rightBottom .chooseWrap dl')
+        // console.log(dlNode);
+
+        var ddNode = dlNode[0].querySelectorAll('#wrapper #content .contentMain #center .rightBottom .chooseWrap dl dd')
+        // console.log(ddNode);
+
+        // 2、遍历当前所有的dd元素
+        for(var i = 0;i < ddNode.length;i++){
+            ddNode[i].onclick = function(){
+                for(var j = 0;j < ddNode.length;j++){
+                    ddNode[j].style.color = '#666'
+                }
+                this.style.color = "red"
+            }
+        }
+    }
 }

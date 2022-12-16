@@ -260,6 +260,7 @@
                     width: 700px;
                     float: right;
                     // 商品详情数据结构开始
+                    // 上面
                     .rightTop{
                         h3{
                             font-size: 14px;
@@ -365,7 +366,38 @@
                     }
                 }
                 // 商品参数数据结构开始
-                .rightBottom{}
+                // 下面
+                .rightBottom{
+                    margin-top: 10px;
+                    line-height: 28px;
+                    // 商品参数选择区域开始
+                    .chooseWrap{
+                        dl{
+                            margin-top: 13px;
+                            margin-bottom: 13px;
+                            .clearfix();
+                            dt{
+                                float: left;
+                                margin-right: 15px;
+                            }
+                            dd{
+                                float: left;
+                                margin-right: 5px;
+                                color: #666;
+                                line-height: 24px;
+                                padding:2px 14px;
+                                border-top: 1px solid #eee;
+                                border-left: 1px solid #eee;
+                                border-right: 1px solid #bbb;
+                                border-bottom: 1px solid #bbb;
+
+                                &:first-of-type{
+                                    color: red;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             // 中间区域结束
         }

@@ -330,3 +330,34 @@
   float: left;
   color: #999;
 }
+#wrapper #content .contentMain #center .rightBottom {
+  margin-top: 10px;
+  line-height: 28px;
+}
+#wrapper #content .contentMain #center .rightBottom .chooseWrap dl {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+#wrapper #content .contentMain #center .rightBottom .chooseWrap dl::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrapper #content .contentMain #center .rightBottom .chooseWrap dl dt {
+  float: left;
+  margin-right: 15px;
+}
+#wrapper #content .contentMain #center .rightBottom .chooseWrap dl dd {
+  float: left;
+  margin-right: 5px;
+  color: #666;
+  line-height: 24px;
+  padding: 2px 14px;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+}
+#wrapper #content .contentMain #center .rightBottom .chooseWrap dl dd:first-of-type {
+  color: red;
+}
