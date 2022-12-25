@@ -415,9 +415,133 @@
                             }
                         }
                     }
+                    // 添加购物车区域开始
+                    .addCart{
+                        .clearfix();
+                        .count{
+                            width: 55px;
+                            margin-right: 15px;
+                            position: relative;
+                            float: left;
+                            input{
+                                width: 38px;
+                                height: 37px;
+                                border: 1px solid #ddd;
+                                color: #555;
+                            }
+                            a{
+                                width: 15px;
+                                height: 18px;
+                                color: #666;
+                                background: #f1f1f1;
+                                position: absolute;
+                                right: 1px;
+                                text-align: center;
+                                line-height: 18px;
+                                border: 1px solid #ddd;
+                                &:first-child{
+                                    top: 0px;
+                                }
+                                &:last-child{
+                                    top: 20px;
+                                    border-top: none;
+                                }
+                            }
+                        }
+                        button{
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            height: 36px;
+                            font-size: 16px;
+                            background: #e1251b;
+                            color: #fff;
+                            border: none;
+                            float: left;
+                        }
+                    }
                 }
             }
             // 中间区域结束
+
+            // 商品详情中间部分开始
+            .goodsDetailWrap{
+                width: 1200px;
+                margin: 30px auto 0;
+                // 左边的侧边栏
+                .leftAside{
+                    width: 210px;
+                    border: 1px solid #ccc;
+                    .clearfix();
+                    // 上边
+                    .asideTop{
+                        .clearfix();
+                        h4{
+                            width: 105px;
+                            height: 40px;
+                            background: #fff;
+                            float: left;
+                            text-align: center;
+                            line-height: 40px;
+                            border-bottom: 1px solid #ccc;
+                            border-top: 3px solid #fff;
+                            &.active{
+                                border-top: 3px solid #e1251b;
+                                width: 105px;
+                                line-height: 37px;
+                                text-align: center;
+                                line-height: 40px;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                    // 下边
+                    .aslideContent{
+                        padding: 10px;
+                        div{
+                            &.active{
+                                ul{
+                                    &.goodslist1{
+                                        li{
+                                            width: 50%;
+                                            border-bottom: 1px dashed #ededed;
+                                            line-height: 28px;
+                                            float: left;
+                                        }
+                                    }
+                                    &.goodslist2{
+                                        margin: 5px 0 15px;
+                                        li{
+                                            border-bottom: 1px solid #ededed;
+                                            img{
+                                                width: 152px;
+                                            }
+                                            span{}
+                                            p{
+                                                font-size: 16px;
+                                                color: #c81623;
+                                            }
+                                            .button{
+                                                margin-top: 5px;
+                                                margin-bottom: 5px;
+                                                text-align: center;
+                                                a{
+                                                    color: #8c8c8c;
+                                                    padding: 2px 14px;
+                                                    line-height: 18px;
+                                                    border: 1px solid #8c8c8c;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                // 右边
+                .rightDetail{}
+            }
+            // 商品详情中间部分结束
         }
     }
     // 内容区域结束

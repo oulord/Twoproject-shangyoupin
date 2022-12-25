@@ -380,3 +380,117 @@
 #wrapper #content .contentMain #center .rightBottom .chooseWrap dl dd:first-of-type {
   color: red;
 }
+#wrapper #content .contentMain #center .rightBottom .addCart::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrapper #content .contentMain #center .rightBottom .addCart .count {
+  width: 55px;
+  margin-right: 15px;
+  position: relative;
+  float: left;
+}
+#wrapper #content .contentMain #center .rightBottom .addCart .count input {
+  width: 38px;
+  height: 37px;
+  border: 1px solid #ddd;
+  color: #555;
+}
+#wrapper #content .contentMain #center .rightBottom .addCart .count a {
+  width: 15px;
+  height: 18px;
+  color: #666;
+  background: #f1f1f1;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  line-height: 18px;
+  border: 1px solid #ddd;
+}
+#wrapper #content .contentMain #center .rightBottom .addCart .count a:first-child {
+  top: 0px;
+}
+#wrapper #content .contentMain #center .rightBottom .addCart .count a:last-child {
+  top: 20px;
+  border-top: none;
+}
+#wrapper #content .contentMain #center .rightBottom .addCart button {
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 36px;
+  font-size: 16px;
+  background: #e1251b;
+  color: #fff;
+  border: none;
+  float: left;
+}
+#wrapper #content .contentMain .goodsDetailWrap {
+  width: 1200px;
+  margin: 30px auto 0;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside {
+  width: 210px;
+  border: 1px solid #ccc;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4 {
+  width: 105px;
+  height: 40px;
+  background: #fff;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  border-top: 3px solid #fff;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .asideTop h4.active {
+  border-top: 3px solid #e1251b;
+  width: 105px;
+  line-height: 37px;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: none;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent {
+  padding: 10px;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist1 li {
+  width: 50%;
+  border-bottom: 1px dashed #ededed;
+  line-height: 28px;
+  float: left;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist2 {
+  margin: 5px 0 15px;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist2 li {
+  border-bottom: 1px solid #ededed;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist2 li img {
+  width: 152px;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist2 li p {
+  font-size: 16px;
+  color: #c81623;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist2 li .button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+#wrapper #content .contentMain .goodsDetailWrap .leftAside .aslideContent div.active ul.goodslist2 li .button a {
+  color: #8c8c8c;
+  padding: 2px 14px;
+  line-height: 18px;
+  border: 1px solid #8c8c8c;
+}
