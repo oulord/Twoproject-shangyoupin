@@ -509,5 +509,56 @@ window.onload = function(){
         }
 
         oldPrice.innerText = price
+
+        // 3、将变换后的价格写入到左侧标签中
+        var leftprice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .left p')
+        leftprice.innerText = `￥${price}`
+
+        var newprice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .right i')
+
+        // 4、遍历选择搭配中所有的复选框元素，看是否选中的
+        var ipts = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .middle li input')
+        for(var j = 0;j < ipts.length;j++){
+            if(ipts[j].checked){
+                price += Number(ipts[j].value)
+            }
+        }
+        // 5、右侧的套餐价格重新渲染
+        newprice.innerText = `￥${price}`
+    }
+
+    // 选择搭配中间区域复选框选中套餐价变动效果
+    chooseprice()
+    function chooseprice(){
+        /**
+         * 思路：
+         * 1、获取中间区域所有的复选框元素
+         * 2、遍历这些元素取出他们的价格，和左侧的基础价格进行累加，累加之后重新写回套餐价标签里面
+         */
+
+        // 1、获取复选框的元素
+        var ipts = document.querySelectorAll('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .middle li input')
+        // console.log(ipts);
+
+        // 获取左侧的价格
+        var leftprice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .left p')
+
+        // 重新获取套餐价格
+        var newprice = document.querySelector('#wrapper #content .contentMain .goodsDetailWrap .rightDetail .chooseBox .listWrap .right i')
+
+        // 2、遍历这些复选框
+        for(var i = 0;i < ipts.length;i++){
+            ipts[i].onclick = function(){
+                var oldprice = leftprice.innerText.slice(1)
+                for(var j = 0;j < ipts.length;j++){
+                    if(ipts[j].checked){
+                        // 新的价格 = 左侧价格 + 选中复选框附加价格
+                        oldprice = Number(oldprice) + Number(ipts[j].value)
+                    }
+                }
+                // 3、重新写回到套餐价
+                newprice.innerText = `￥${oldprice}`
+            }
+        }
     }
 }
