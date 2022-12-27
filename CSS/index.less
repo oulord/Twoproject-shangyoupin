@@ -500,7 +500,9 @@
                     .aslideContent{
                         padding: 10px;
                         div{
+                            display: none;
                             &.active{
+                                display: block;
                                 ul{
                                     &.goodslist1{
                                         li{
@@ -629,6 +631,48 @@
                                     color: #fff;
                                     background: #e1251b;
                                     border: none;
+                                }
+                            }
+                        }
+                    }
+
+                    // 选项卡开始
+                    .BottomDetail{
+                        // 菜单
+                        .tabBtns{
+                            background: #ededed;
+                            .clearfix();
+                            li{
+                                border-top: 1px solid #ddd;
+                                border-bottom: 1px solid #ddd;
+                                background: #fff;
+                                border-left: 1px solid #ddd;
+                                height: 40px;
+                                padding-left: 11px;
+                                padding-right: 11px;
+                                float: left;
+                                text-align: center;
+                                line-height: 40px;
+                                &.active{
+                                    background: red;
+                                    a{
+                                        color: #fff;
+                                    }
+                                }
+                                &:last-child{
+                                border-right: 1px solid #ddd;
+                                }
+                            }
+                        }
+                        // 内容
+                        .tabContents{
+                            div{
+                                padding-left: 20px;
+                                line-height: 25px;
+                                display: none;
+                                &.active{
+                                    margin: 10px 0;
+                                    display: block;
                                 }
                             }
                         }
